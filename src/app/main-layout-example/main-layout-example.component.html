@@ -1,0 +1,94 @@
+<pip-shadow visible="true" attachmentSide="top"></pip-shadow>
+<pip-shadow visible="true" attachmentSide="left"></pip-shadow>
+<pip-shadow visible="true" attachmentSide="right"></pip-shadow>
+<pip-scrollable fxFlex="fill">
+  <pip-scrollable-content>
+    <div class="main-div" fxLayout="column">
+      <mat-toolbar color="primary" class="main-div">Media query</mat-toolbar>
+      <div fxFlex="grow" fxLayout="row">
+        <div fxFlex="grow" fxLayout="column">
+          <div class="xs">
+            xs
+          </div>
+          <div class="gt-xs">
+            gt-xs
+          </div>
+          <div class="lt-sm">
+            lt-sm
+          </div>
+          <div class="sm">
+            sm
+          </div>
+          <div class="gt-sm">
+            gt-sm
+          </div>
+          <div class="lt-md">
+            lt-md
+          </div>
+          <div class="md">
+            md
+          </div>
+          <div class="gt-md">
+            gt-md
+          </div>
+          <div class="lt-lg">
+            lt-lg
+          </div>
+          <div class="lg">
+            lg
+          </div>
+          <div class="gt-lg">
+            gt-lg
+          </div>
+          <div class="lt-xl">
+            lt-xl
+          </div>
+          <div class="xl">
+            xl
+          </div>
+        </div>
+        <div fxFlex="grow" fxLayout="column">
+          <div class="main-xs">
+            main-xs
+          </div>
+          <div class="main-gt-xs">
+            main-gt-xs
+          </div>
+          <div class="main-lt-sm">
+            main-lt-sm
+          </div>
+          <div class="main-sm">
+            main-sm
+          </div>
+          <div class="main-gt-sm" *ngIf="media.isMainActive('gt-sm')">
+            main-gt-sm
+          </div>
+          <div class="main-lt-md">
+            main-lt-md
+          </div>
+          <div class="main-md">
+            main-md
+          </div>
+          <div class="main-gt-md">
+            main-gt-md
+          </div>
+          <div class="main-lt-lg">
+            main-lt-lg
+          </div>
+          <div class="main-lg">
+            main-lg
+          </div>
+          <div class="main-gt-lg">
+            main-gt-lg
+          </div>
+          <div class="main-lt-xl">
+            main-lt-xl
+          </div>
+          <div class="main-xl">
+            main-xl
+          </div>
+        </div>
+      </div>
+    </div>
+  </pip-scrollable-content>
+</pip-scrollable>

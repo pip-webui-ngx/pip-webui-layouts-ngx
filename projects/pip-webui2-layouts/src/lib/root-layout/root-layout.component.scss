@@ -1,0 +1,28 @@
+mat-sidenav {
+    max-width: 250px;
+    width: 250px;
+    background-color: rgb(238, 238, 238);
+}
+
+.pip-sidenav-floating-container {
+    display: block;
+    height: 100%;
+}
+
+:host {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    ::ng-deep pip-root-content {
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        display: flex;
+        box-sizing: border-box;
+        flex-direction: column !important;
+    }
+}

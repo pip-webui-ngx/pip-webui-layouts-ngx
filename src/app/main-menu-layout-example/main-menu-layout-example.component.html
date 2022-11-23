@@ -1,0 +1,87 @@
+<pip-shadow visible="true" attachmentSide="top"></pip-shadow>
+<pip-shadow visible="true" attachmentSide="left"></pip-shadow>
+<pip-shadow visible="true" attachmentSide="right"></pip-shadow>
+<div fxFlex="fill" fxLayout="column">
+  <nav mat-tab-nav-bar color="primary">
+    <a mat-tab-link *ngFor="let link of navLinks; let i = index" [active]="i == selectedIndex" (click)="onLinkClick(i)">
+      {{link.label}}
+    </a>
+  </nav>
+
+  <div fxFlex="grow">
+    <pip-menu-layout [single]="isSingle">
+      <div class="pip-menu">
+        <mat-nav-list>
+          <mat-list-item *ngFor="let item of list; let i = index" (click)="onItemClick(i)">
+            <h3 md-line>{{ item.title }}</h3>
+          </mat-list-item>
+        </mat-nav-list>
+      </div>
+
+      <div class="pip-menu-container">
+        <pip-document-layout *ngIf="selectedIndex == 0">
+          <pip-document-content>
+            <h3>Title {{ itemIndex }}</h3>
+            <mat-slide-toggle *ngIf="media.isMainActive('gt-xs')" [(checked)]="isSingle">Single content</mat-slide-toggle>
+            <img style="margin-top: 8px" src="http://s4.thingpic.com/images/pQ/NnndmJd4bex6qPpZAzMJ9mPG.jpeg" width="100%"
+                 alt="">
+            <div style="margin-top: 8px">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              Excepteur
+              sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed
+              ut
+              perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+              aperiam,
+              eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
+              enim
+              ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
+              qui
+              ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+              consectetur,
+              adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam
+              quaerat
+              voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
+              nisi
+              ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit
+              esse
+              quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero
+              eos
+              et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
+              corrupti
+              quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa
+              qui
+              officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et
+              expedita
+              distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id
+              quod
+              maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem
+              quibusdam
+              et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et
+              molestiae
+              non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus
+              maiores
+              alias consequatur aut perferendis doloribus asperiores repellat.
+            </div>
+          </pip-document-content>
+        </pip-document-layout>
+        <div class="pip-multi-tiles-container" *ngIf="selectedIndex == 1">
+          <pip-tiles-layout columnWidth="200">
+            <div class="pip-tile pip-tile-narrow" *ngFor="let tile of tiles">
+              <h3 style="margin: 16px 8px">{{ tile.title }}</h3>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw6KNcvzNDdDw32Y7Kvnc7zwP6tqwuFLEVJmjsyhQD-X7ls-Z5"
+                   width="100%" alt="">
+              <div style="margin-top: 8px">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+              </div>
+            </div>
+          </pip-tiles-layout>
+        </div>
+      </div>
+    </pip-menu-layout>
+  </div>
+
+</div>

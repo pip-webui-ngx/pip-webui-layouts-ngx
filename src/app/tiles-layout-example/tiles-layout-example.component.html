@@ -1,0 +1,30 @@
+<pip-shadow visible="true" attachmentSide="top"></pip-shadow>
+<pip-shadow visible="true" attachmentSide="left"></pip-shadow>
+<pip-shadow visible="true" attachmentSide="right"></pip-shadow>
+<div class="pip-multi-tiles-container">
+  <mat-toolbar color="accent">
+    <h4>First title</h4>
+  </mat-toolbar>
+  <pip-tiles-layout [stretch]="media.isActive('lt-md')">
+    <div class="pip-tile" *ngFor="let tile of tiles">
+      <h3 style="margin: 16px 8px">{{ tile.title }}</h3>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw6KNcvzNDdDw32Y7Kvnc7zwP6tqwuFLEVJmjsyhQD-X7ls-Z5"
+           width="100%" alt="">
+    </div>
+  </pip-tiles-layout>
+  <mat-toolbar color="accent">
+    <h4>Second title</h4>
+  </mat-toolbar>
+  <pip-tiles-layout columnWidth="200" [stretch]="media.isActive('xs')">
+    <div class="pip-tile pip-tile-narrow" *ngFor="let tile of tiles">
+      <div style="margin: 8px">
+        <h3>{{ tile.title }}</h3>
+        <img style="margin-top: 8px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw6KNcvzNDdDw32Y7Kvnc7zwP6tqwuFLEVJmjsyhQD-X7ls-Z5"
+             width="100%" alt="">
+        <div style="margin-top: 8px">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+        </div>
+      </div>
+    </div>
+  </pip-tiles-layout>
+</div>
