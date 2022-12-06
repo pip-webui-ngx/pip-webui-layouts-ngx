@@ -14,60 +14,60 @@ Development responsible applications requires to organization content the way th
 
 #### Mobile structure
 
-<a href="https://github.com/pip-webui2/pip-webui2-layouts/raw/master/doc/images/mobile_layout.png" style="display: block">
-    <img src="https://github.com/pip-webui2/pip-webui2-layouts/raw/master/doc/images/mobile_layout.png"/>
+<a href="https://github.com/pip-webui2/pip-webui-layouts-ngx/raw/master/doc/images/mobile_layout.png" style="display: block">
+    <img src="https://github.com/pip-webui2/pip-webui-layouts-ngx/raw/master/doc/images/mobile_layout.png"/>
 </a>
 
 **Note that** root layout has no paddings.
 
 **Real example** with closed sidenav and rightnav.
 
-<a href="https://github.com/pip-webui2/pip-webui2-layouts/raw/master/doc/images/mobile_layout_screenshot.png" style="display: block; max-width: 512px">
-    <img src="https://github.com/pip-webui2/pip-webui2-layouts/raw/master/doc/images/mobile_layout_screenshot.png"/>
+<a href="https://github.com/pip-webui2/pip-webui-layouts-ngx/raw/master/doc/images/mobile_layout_screenshot.png" style="display: block; max-width: 512px">
+    <img src="https://github.com/pip-webui2/pip-webui-layouts-ngx/raw/master/doc/images/mobile_layout_screenshot.png"/>
 </a>
 
 #### Phablet structure
 
-<a href="https://github.com/pip-webui2/pip-webui2-layouts/raw/master/doc/images/fablet_layout.png" style="display: block">
-    <img src="https://github.com/pip-webui2/pip-webui2-layouts/raw/master/doc/images/fablet_layout.png"/>
+<a href="https://github.com/pip-webui2/pip-webui-layouts-ngx/raw/master/doc/images/fablet_layout.png" style="display: block">
+    <img src="https://github.com/pip-webui2/pip-webui-layouts-ngx/raw/master/doc/images/fablet_layout.png"/>
 </a>
 
 **Real example** with closed rightnav.
 
-<a href="https://github.com/pip-webui2/pip-webui2-layouts/raw/master/doc/images/fablet_layout_screenshot.png" style="display: block; max-width: 700px">
-    <img src="https://github.com/pip-webui2/pip-webui2-layouts/raw/master/doc/images/fablet_layout_screenshot.png"/>
+<a href="https://github.com/pip-webui2/pip-webui-layouts-ngx/raw/master/doc/images/fablet_layout_screenshot.png" style="display: block; max-width: 700px">
+    <img src="https://github.com/pip-webui2/pip-webui-layouts-ngx/raw/master/doc/images/fablet_layout_screenshot.png"/>
 </a>
 
 #### Tablet structure
 
 ##### Tablet structure with expanded side nav
 
-<a href="https://github.com/pip-webui2/pip-webui2-layouts/raw/master/doc/images/tablet_layout_opened.png" style="display: block">
-    <img src="https://github.com/pip-webui2/pip-webui2-layouts/raw/master/doc/images/tablet_layout_opened.png"/>
+<a href="https://github.com/pip-webui2/pip-webui-layouts-ngx/raw/master/doc/images/tablet_layout_opened.png" style="display: block">
+    <img src="https://github.com/pip-webui2/pip-webui-layouts-ngx/raw/master/doc/images/tablet_layout_opened.png"/>
 </a>
 
 ##### Tablet structure with not expanded side nav
 
-<a href="https://github.com/pip-webui2/pip-webui2-layouts/raw/master/doc/images/tablet_layout_closed.png" style="display: block">
-    <img src="https://github.com/pip-webui2/pip-webui2-layouts/raw/master/doc/images/tablet_layout_closed.png"/>
+<a href="https://github.com/pip-webui2/pip-webui-layouts-ngx/raw/master/doc/images/tablet_layout_closed.png" style="display: block">
+    <img src="https://github.com/pip-webui2/pip-webui-layouts-ngx/raw/master/doc/images/tablet_layout_closed.png"/>
 </a>
 
 **Real example** with closed rightnav and expanded side nav.
 
-<a href="https://github.com/pip-webui2/pip-webui2-layouts/raw/master/doc/images/tablet_layout_opened_screenshot.png" style="display: block; max-width: 1000px">
-    <img src="https://github.com/pip-webui2/pip-webui2-layouts/raw/master/doc/images/tablet_layout_opened_screenshot.png"/>
+<a href="https://github.com/pip-webui2/pip-webui-layouts-ngx/raw/master/doc/images/tablet_layout_opened_screenshot.png" style="display: block; max-width: 1000px">
+    <img src="https://github.com/pip-webui2/pip-webui-layouts-ngx/raw/master/doc/images/tablet_layout_opened_screenshot.png"/>
 </a>
 
 #### Desktop structure
 
-<a href="https://github.com/pip-webui2/pip-webui2-layouts/raw/master/doc/images/desktop_layout.png" style="display: block">
-    <img src="https://github.com/pip-webui2/pip-webui2-layouts/raw/master/doc/images/desktop_layout.png"/>
+<a href="https://github.com/pip-webui2/pip-webui-layouts-ngx/raw/master/doc/images/desktop_layout.png" style="display: block">
+    <img src="https://github.com/pip-webui2/pip-webui-layouts-ngx/raw/master/doc/images/desktop_layout.png"/>
 </a>
 
 **Real example** with closed rightnav.
 
-<a href="https://github.com/pip-webui2/pip-webui2-layouts/raw/master/doc/images/desktop_layout_screenshot.png" style="display: block;">
-    <img src="https://github.com/pip-webui2/pip-webui2-layouts/raw/master/doc/images/desktop_layout_screenshot.png"/>
+<a href="https://github.com/pip-webui2/pip-webui-layouts-ngx/raw/master/doc/images/desktop_layout_screenshot.png" style="display: block;">
+    <img src="https://github.com/pip-webui2/pip-webui-layouts-ngx/raw/master/doc/images/desktop_layout_screenshot.png"/>
 </a>
 
 ### Layouts
@@ -100,7 +100,7 @@ Internal part consist of **main layout** and its width calculated without includ
 To install this module using npm:
 
 ```bash
-npm install pip-webui2-layouts --save
+npm install pip-webui-layouts-ngx --save
 ```
 
 ## Using

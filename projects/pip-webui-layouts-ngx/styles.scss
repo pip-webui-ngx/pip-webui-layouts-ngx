@@ -1,0 +1,111 @@
+@use '@angular/material' as mat;
+.pip-main-xs,
+.pip-main-sm,
+.pip-main-md,
+.pip-main-document-lt-lg {
+  .pip-document-layout {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+  }
+}
+
+.pip-main-sm,
+.pip-main-md {
+  .pip-menu-layout:not(.pip-single-content) {
+    .pip-menu-container {
+      .pip-document-layout {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.pip-document-layout {
+  -webkit-transition: left 0.35s ease, width 0.35s ease;
+  -moz-transition: left 0.35s ease, width 0.35s ease;
+  -ms-transition: left 0.35s ease, width 0.35s ease;
+  -o-transition: left 0.35s ease, width 0.35s ease;
+  transition: left 0.35s ease, width 0.35s ease;
+}
+
+.pip-menu-layout {
+  &:not(.pip-single-content) {
+    .pip-menu-container {
+      .pip-document-layout {
+        left: 0px;
+        width: calc(100% - 16px);
+        height: calc(100% - 16px);
+        max-width: 960px;
+      }
+    }
+  }
+  .pip-menu-container {
+    .pip-document-layout {
+      transition: left 0.35s ease !important;
+    }
+  }
+}
+
+.pip-toolbar-shadow {
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.26);
+}
+@import '~pip-webui2-themes/variables.scss';
+
+@mixin tile-mixin($theme) {
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  .pip-tile {
+    color: mat.get-color-from-palette($foreground, text) !important;
+    background: mat.get-color-from-palette($background, card);
+  }
+}
+
+@each $class, $theme in $themes {
+  .#{$class} {
+    @include tile-mixin($theme);
+  }
+}
+
+.pip-tile {
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.26);
+  border-radius: 2px;
+  margin: 8px; //transition: width 0.35s;
+  overflow: hidden;
+}
+
+pip-tiles-layout .pip-stretch .pip-tile {
+  width: calc(100% - 16px) !important;
+}
+
+.pip-multi-tiles-container {
+  overflow: auto;
+  height: 100%;
+  .pip-tiles-layout {
+    overflow: hidden;
+  }
+}
+.pip-rightnav {
+  overflow: hidden !important;
+  pip-rightnav-floating,
+  pip-rightnav-fixed {
+    padding: 0 !important;
+    height: 100%;
+  }
+  .pip-rightnav-title {
+    overflow: hidden !important;
+  }
+  .pip-rightnav-content {
+    overflow-y: auto !important;
+    overflow-x: hidden;
+  }
+}

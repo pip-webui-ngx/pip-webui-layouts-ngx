@@ -1,16 +1,21 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { PipMediaModule } from 'pip-webui2-layouts';
-
+import { MatIconModule } from '@angular/material/icon';
+import { TranslocoModule } from '@ngneat/transloco';
+import { PipMediaModule } from 'pip-webui-layouts-ngx';
 import { FxLayoutExampleComponent } from './fx-layout-example.component';
+import { FxLayoutExampleRoutingModule } from './fx-layout-example.routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FlexLayoutModule,
-    PipMediaModule
+    MatIconModule,
+    PipMediaModule,
+    TranslocoModule,
+    FxLayoutExampleRoutingModule,
   ],
-  declarations: [FxLayoutExampleComponent]
+  declarations: [FxLayoutExampleComponent],
 })
-export class FxLayoutExampleModule { }
+export class FxLayoutExampleModule {}

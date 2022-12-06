@@ -1,31 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PipAppbarService, PipAppbarTab } from 'pip-webui2-layouts';
+import { PipAppbarService, PipAppbarTab } from 'pip-webui-layouts-ngx';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
-    selector: 'app-tab-page',
-    templateUrl: './tab-page.html'
+  selector: 'pip-tab-page',
+  templateUrl: './tab-page.html',
 })
 export class TabsPageComponent implements OnInit {
+  public content$: Observable<string>;
 
-    public active$: Observable<PipAppbarTab>;
+  constructor(private appbar: PipAppbarService, private route: ActivatedRoute) {}
 
-    constructor(
-        private appbar: PipAppbarService,
-        private route: ActivatedRoute
-    ) {
-        this.active$ = this.appbar.activeTab$;
-    }
+  ngOnInit() {
+    this.content$ = this.route.paramMap.pipe(
+      map((p) => (p.get('id') === '1' ? 'PAGE.TAB.FIRST_CONTENT' : 'PAGE.TAB.SECOND_CONTENT')),
+    );
+  }
 
-    ngOnInit() { }
+  public toggleColor() {
+    this.appbar.bgColor = this.appbar.bgColor === 'primary' ? 'accent' : 'primary';
+  }
 
-    public toggleColor() {
-        this.appbar.bgColor = this.appbar.bgColor === 'primary' ? 'accent' : 'primary';
-    }
-
-    public toggleInkColor() {
-        this.appbar.color = this.appbar.color === 'primary' ? 'accent' : 'primary';
-    }
-
+  public toggleInkColor() {
+    this.appbar.color = this.appbar.color === 'primary' ? 'accent' : 'primary';
+  }
 }

@@ -5,19 +5,20 @@ import { TabsExampleComponent } from './tabs-example.component';
 import { TabsPageComponent } from './tab-page/tab-page.component';
 
 const tabsRoutes: Routes = [
-    {
-        path: '', component: TabsExampleComponent, children: [
-            {
-                path: 'glue/:id', component: TabsPageComponent
-            }
-        ]
-    }
+  {
+    path: '',
+    component: TabsExampleComponent,
+    children: [
+      {
+        path: 'glue/:id',
+        component: TabsPageComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
-    imports: [
-        RouterModule.forChild(tabsRoutes)
-    ],
-    exports: [RouterModule]
+  imports: [RouterModule.forChild(tabsRoutes)],
+  exports: [RouterModule],
 })
-export class TabsRoutingModule { }
+export class TabsRoutingModule {}

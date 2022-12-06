@@ -1,0 +1,12 @@
+@use 'media-example/media-example-theme';
+@use 'node_modules/@angular/material' as mat;
+
+@mixin theme($theme-or-color-config) {
+  @include media-example-theme.theme($theme-or-color-config);
+  $color: mat.get-color-config($theme-or-color-config);
+  $background: map-get($color, 'background');
+
+  .pip-sidenav-start .mat-nav-list .mat-list-item.selected {
+    background-color: map-get($background, 'hover');
+  }
+}

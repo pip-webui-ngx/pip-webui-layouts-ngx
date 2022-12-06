@@ -1,33 +1,20 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { PipSidenavService } from 'pip-webui2-layouts';
+import { Component } from '@angular/core';
+import { PipSidenavService } from 'pip-webui-layouts-ngx';
 
 @Component({
-  selector: 'app-card-layout-example',
+  selector: 'pip-card-layout-example',
   templateUrl: './card-layout-example.component.html',
-  styleUrls: ['./card-layout-example.component.scss']
+  styleUrls: ['./card-layout-example.component.scss'],
 })
-export class CardLayoutExampleComponent implements OnInit, OnDestroy {
-
-  private sidenavActive = false;
+export class CardLayoutExampleComponent {
+  private sidenavActive = true;
   public isTransparent = false;
   public text = false;
 
-  constructor(
-    public sidenav: PipSidenavService
-  ) { }
-
-  ngOnInit() {
-    this.sidenav.active = this.sidenavActive;
-  }
-
-  ngOnDestroy() {
-    this.sidenav.active = true;
-  }
+  constructor(public sidenav: PipSidenavService) {}
 
   public onSidenavClick() {
     this.sidenavActive = !this.sidenavActive;
-    console.log('this.sidenavActive: ', this.sidenavActive);
-    this.sidenav.active = this.sidenavActive;
+    this.sidenav.start.active = this.sidenavActive;
   }
-
 }

@@ -1,0 +1,22 @@
+{
+  "name": "pip-webui-layouts-ngx",
+  "version": "14.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pip-webui-ngx/pip-webui-layouts-ngx"
+  },
+  "dependencies": {
+    "css-element-queries": "^1.2.3",
+    "masonry-layout": "^4.2.2",
+    "tslib": "^2.0.0"
+  },
+  "peerDependencies": {
+    "@angular/cdk": "~14.2.7",
+    "@angular/common": "~14.2.10",
+    "@angular/core": "~14.2.12",
+    "@angular/flex-layout": "^14.0.0-beta.41",
+    "@angular/material": "~14.2.7",
+    "rxjs": "~7.5.6"
+  }
+}

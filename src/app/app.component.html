@@ -1,58 +1,82 @@
-<pip-root-layout>
-  <pip-rightnav-floating style="font-family: Roboto; padding: 8px" fxLayout="column">
-    <mat-toolbar fxLayout="row" class="pip-rightnav-title" color="accent">
-      <h2 style="margin: 0px">Tigers</h2>
-      <div fxFlex="grow"></div>
-      <button style="margin-right: -16px" mat-icon-button (click)="onInfoClick()">
-        <mat-icon>clear</mat-icon>
-      </button>
-    </mat-toolbar>
-    <div class="pip-rightnav-content" fxFlex="grow" style="padding: 8px">
-      <img src="http://s4.thingpic.com/images/pQ/NnndmJd4bex6qPpZAzMJ9mPG.jpeg" width="100%" alt="">
-      <div style="margin-top: 8px">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-        sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </div>
-      <img style="margin-top: 8px" src="http://www.pavelin.ru/images/stories/tigryata/tigryata_01.jpg" width="100%" alt="">
-      <div style="margin-top: 8px">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-        sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </div>
-      <img style="margin-top: 8px" src="http://kids.nationalgeographic.com/content/dam/kids/photos/articles/Other%20Explore%20Photos/R-Z/Wacky%20Weekend/Wild%20Cats/ww-wild-cats-tiger.adapt.945.1.jpg"
-           width="100%" alt="">
-      <div style="margin-top: 8px">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-        sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </div>
-      <img style="margin-top: 8px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw6KNcvzNDdDw32Y7Kvnc7zwP6tqwuFLEVJmjsyhQD-X7ls-Z5"
-           width="100%" alt="">
-      <div style="margin-top: 8px">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-        sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<pip-root-layout *ngIf="ctx$ | async as ctx">
+  <pip-sidenav-start>
+    <pip-nav-expander></pip-nav-expander>
+    <mat-nav-list dense>
+      <ng-container *ngFor="let g of groups">
+        <h3 mat-subheader class="pip-sidenav-start-collapsed-hide">{{ g?.name | transloco }}</h3>
+        <mat-list-item
+          *ngFor="let item of g.items"
+          (click)="sidenav?.start?.close()"
+          [routerLink]="item.route"
+          routerLinkActive="selected"
+        >
+          <mat-icon>{{ item?.icon }}</mat-icon>
+          <h3 md-line class="pip-sidenav-start-collapsed-hide">{{ item.name | transloco }}</h3>
+        </mat-list-item>
+      </ng-container>
+    </mat-nav-list>
+  </pip-sidenav-start>
+  <pip-sidenav-end>
+    <div fxLayout="column" fxFlex="1 1 100%">
+      <mat-toolbar fxLayout="row" fxFlex="0 0 auto" class="pip-sidenav-end-title" color="accent">
+        <h2 style="margin: 0px">Tigers</h2>
+        <div fxFlex="grow"></div>
+        <button style="margin-right: -16px" mat-icon-button (click)="onInfoClick()">
+          <mat-icon>clear</mat-icon>
+        </button>
+      </mat-toolbar>
+      <div fxFlex="grow" style="padding: 8px; overflow: auto">
+        <img src="http://s4.thingpic.com/images/pQ/NnndmJd4bex6qPpZAzMJ9mPG.jpeg" width="100%" alt="" />
+        <div style="margin-top: 8px">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </div>
+        <img
+          style="margin-top: 8px"
+          src="http://www.pavelin.ru/images/stories/tigryata/tigryata_01.jpg"
+          width="100%"
+          alt=""
+        />
+        <div style="margin-top: 8px">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </div>
+        <img
+          style="margin-top: 8px"
+          src="http://kids.nationalgeographic.com/content/dam/kids/photos/articles/Other%20Explore%20Photos/R-Z/Wacky%20Weekend/Wild%20Cats/ww-wild-cats-tiger.adapt.945.1.jpg"
+          width="100%"
+          alt=""
+        />
+        <div style="margin-top: 8px">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </div>
+        <img
+          style="margin-top: 8px"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw6KNcvzNDdDw32Y7Kvnc7zwP6tqwuFLEVJmjsyhQD-X7ls-Z5"
+          width="100%"
+          alt=""
+        />
+        <div style="margin-top: 8px">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </div>
       </div>
     </div>
-  </pip-rightnav-floating>
-  <pip-root-content>
+  </pip-sidenav-end>
+  <pip-root-header>
     <pip-appbar [ngSwitch]="showIcon$ | async">
       <button mat-icon-button class="app-icon" (click)="onMenuClick()" *ngSwitchCase="'menu'">
         <mat-icon>menu</mat-icon>
@@ -63,38 +87,31 @@
       <button mat-icon-button class="app-icon" (click)="onBackClick()" *ngSwitchCase="'back'">
         <mat-icon>arrow_back</mat-icon>
       </button>
-      <p>Layouts</p>
-      <div fxFlex="grow"></div>
+      <span fxFlex="grow">{{ 'TITLE' | transloco }}</span>
+
       <button mat-icon-button [matMenuTriggerFor]="menuLang" style="margin-right: 8px">
         <mat-icon>translate</mat-icon>
       </button>
       <mat-menu #menuLang="matMenu">
-        <button *ngFor="let lang of languages" mat-menu-item (click)="changeLanguage(lang)">
-          {{ lang | translate }}
-          <mat-icon *ngIf="lang === language" style="margin-bottom: 10px">check</mat-icon>
+        <button *ngFor="let ln of languages" mat-menu-item (click)="translate.setActiveLang(ln)">
+          {{ 'LANGUAGE.' + ln.toUpperCase() | transloco }}
+          <mat-icon *ngIf="ln === language" style="margin-bottom: 10px">check</mat-icon>
         </button>
       </mat-menu>
-      <button mat-icon-button [matMenuTriggerFor]="menu" style="margin-right: 8px">
+
+      <button mat-icon-button [matMenuTriggerFor]="menuTheme" style="margin-right: 8px">
         <mat-icon>format_color_fill</mat-icon>
       </button>
-      <mat-menu #menu="matMenu">
-        <button *ngFor="let th of themes" mat-menu-item (click)="onThemeClick(th)">
-          {{ themesLocalNames[th?.name] }} <mat-icon *ngIf="th === theme" style="margin-bottom: 10px">check</mat-icon>
+      <mat-menu #menuTheme="matMenu">
+        <button *ngFor="let th of ctx.themes" mat-menu-item (click)="changeTheme(th)">
+          {{ th?.displayName || th?.name }}
+          <mat-icon *ngIf="th.name === ctx.currentTheme.name" style="margin-bottom: 10px">check</mat-icon>
         </button>
       </mat-menu>
       <button mat-icon-button (click)="onInfoClick()">
         <mat-icon>info</mat-icon>
       </button>
     </pip-appbar>
-    <pip-main-layout-alt fxFlex="grow">
-      <pip-sidenav>
-        <pip-sidenav-expander></pip-sidenav-expander>
-        <examples-list [list]="list" [selectedItemIndex]="listIndex" (selectedItemIndexChange)="onListItemIndexChanged($event)">
-        </examples-list>
-      </pip-sidenav>
-      <pip-main-content>
-        <router-outlet></router-outlet>
-      </pip-main-content>
-    </pip-main-layout-alt>
-  </pip-root-content>
+  </pip-root-header>
+  <router-outlet></router-outlet>
 </pip-root-layout>

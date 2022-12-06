@@ -1,0 +1,30 @@
+<mat-toolbar color="primary" class="pip-toolbar-shadow">{{ 'PAGE.MQ.TITLE' | transloco }}</mat-toolbar>
+<pip-shadow visible="true" attachmentSide="left"></pip-shadow>
+<pip-shadow visible="true" attachmentSide="right"></pip-shadow>
+<div class="content-wrapper">
+  <div class="content">
+    <div class="mat-card-subtitle">{{ 'PAGE.MQ.TIP' | transloco }}</div>
+    <h3>{{ 'PAGE.MQ.DOCUMENT' | transloco }}</h3>
+    <mat-grid-list cols="5" rowHeight="64px">
+      <mat-grid-tile
+        *ngFor="let tile of tilesDocument"
+        [colspan]="tile.cols"
+        [ngClass]="{ active: fxMedia.isActive(tile.alias) }"
+        [style.background]="tile.color"
+      >
+        {{ tile.text }}
+      </mat-grid-tile>
+    </mat-grid-list>
+    <h3>{{ 'PAGE.MQ.MAIN' | transloco }}</h3>
+    <mat-grid-list cols="5" rowHeight="64px">
+      <mat-grid-tile
+        *ngFor="let tile of tilesMain"
+        [colspan]="tile.cols"
+        [ngClass]="{ active: media.isMainActive(tile.alias) }"
+        [style.background]="tile.color"
+      >
+        {{ tile.text }}
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>

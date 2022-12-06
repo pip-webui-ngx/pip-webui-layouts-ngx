@@ -1,0 +1,19 @@
+:host {
+  .mat-form-field {
+    width: 100%;
+  }
+}
+
+:host-context(.pip-xs),
+:host-context(.pip-sm) {
+  .mat-toolbar {
+    min-height: 56px;
+    .mat-toolbar-row {
+      height: 56px;
+    }
+  }
+
+  .mat-toolbar.with-select {
+    min-height: 112px;
+  }
+}

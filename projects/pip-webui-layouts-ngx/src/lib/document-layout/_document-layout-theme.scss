@@ -1,0 +1,52 @@
+@use 'sass:map';
+@use 'node_modules/@angular/material' as mat;
+
+@mixin color($config) {
+  $foreground: map-get($config, foreground);
+  $background: map-get($config, background);
+
+  .pip-document-layout {
+    color: map.get($foreground, text) !important;
+    background: map.get($background, card);
+
+    ::ng-deep pip-document-footer {
+      border-top: 1px solid map.get($foreground, divider);
+    }
+  }
+
+  .pip-main-document-lt-lg .pip-document-layout {
+    border-left: 1px solid map.get($foreground, divider) !important;
+    border-right: 1px solid map.get($foreground, divider) !important;
+    box-sizing: border-box;
+  }
+
+  :not(.pip-main-document-lt-lg) .pip-document-layout,
+  .pip-toolbar-shadow {
+    box-shadow: 0 1px 5px 0 rgba(black, 0.26);
+  }
+}
+
+@mixin typography($config-or-theme) {
+}
+
+@mixin _density($config-or-theme) {
+}
+
+@mixin theme($theme-or-color-config) {
+  $theme: mat.private-legacy-get-theme($theme-or-color-config);
+  @include mat.private-check-duplicate-theme-styles($theme, 'pip-webui-layouts-document-layout') {
+    $color: mat.get-color-config($theme);
+    $density: mat.get-density-config($theme);
+    $typography: mat.get-typography-config($theme);
+
+    @if $color != null {
+      @include color($color);
+    }
+    @if $density != null {
+      @include _density($density);
+    }
+    @if $typography != null {
+      @include typography($typography);
+    }
+  }
+}

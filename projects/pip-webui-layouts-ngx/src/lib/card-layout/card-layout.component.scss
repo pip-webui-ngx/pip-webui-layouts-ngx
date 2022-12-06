@@ -1,0 +1,54 @@
+:host {
+  box-sizing: border-box;
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 100%;
+  overflow-y: auto;
+  place-content: center;
+  align-items: center;
+
+  .pip-card-container {
+    flex: 1 1 100%;
+    max-height: 100%;
+    position: relative;
+  }
+
+  ::ng-deep .mat-card {
+    min-width: 300px;
+    width: 300px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    .mat-input-container {
+      width: 100%;
+    }
+  }
+
+  &.pip-transparent-card {
+    ::ng-deep .mat-card {
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+}
+
+:host-context(.pip-main-lt-md) {
+  .pip-card-container {
+    height: 100%;
+  }
+
+  ::ng-deep .mat-card {
+    width: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    box-shadow: none;
+    min-height: 100%;
+  }
+}

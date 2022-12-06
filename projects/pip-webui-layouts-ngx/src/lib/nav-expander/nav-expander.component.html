@@ -1,0 +1,5 @@
+<mat-nav-list class="pip-nav-expander" [ngClass]="{ show: show$ | async }">
+  <mat-list-item (click)="toggleCollapse()">
+    <mat-icon>{{ icon$ | async }}</mat-icon>
+  </mat-list-item>
+</mat-nav-list>

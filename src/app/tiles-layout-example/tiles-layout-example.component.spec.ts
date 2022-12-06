@@ -11,12 +11,9 @@ describe('TilesLayoutExampleComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TilesLayoutExampleComponent],
-      imports: [
-        FlexLayoutModule
-      ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA]
-    })
-      .compileComponents();
+      imports: [FlexLayoutModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

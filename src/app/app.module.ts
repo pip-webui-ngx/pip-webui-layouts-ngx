@@ -1,77 +1,95 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { TranslateModule } from '@ngx-translate/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   PipAppbarModule,
-  PipMainLayoutAltModule,
   PipMediaModule,
+  PipNavExpanderModule,
+  PipRootLayoutModule,
   PipShadowModule,
-  PipSidenavExpanderModule,
   PipSidenavModule,
-  PipRightnavModule,
-  PipRootLayoutModule
-} from 'pip-webui2-layouts';
-import { PipThemesModule } from 'pip-webui2-themes';
-
-import { AppComponent } from './app.component';
+  PipSidenavPosition,
+} from 'pip-webui-layouts-ngx';
+import { mstThemes, PipThemesModule, pipWebUI2ThemesList } from 'pip-webui-themes-ngx';
 import { AppRoutingModule } from './app-routing.module';
-import { CardLayoutExampleModule } from './card-layout-example/card-layout-example.module';
-import { DocumentLayoutExampleModule } from './document-layout-example/document-layout-example.module';
-import { ExamplesListModule } from './examples-list/examples-list.module';
-import { FxLayoutExampleModule } from './fx-layout-example/fx-layout-example.module';
-import { MainLayoutExampleModule } from './main-layout-example/main-layout-example.module';
-import { MainMenuLayoutExampleModule } from './main-menu-layout-example/main-menu-layout-example.module';
-import { ScrollableLayoutExampleModule } from './scrollable-layout-example/scrollable-layout-example.module';
-import { TilesLayoutExampleModule } from './tiles-layout-example/tiles-layout-example.module';
+import { AppComponent } from './app.component';
+import { TranslocoRootModule } from './transloco-root.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     FlexLayoutModule,
     MatButtonModule,
     MatGridListModule,
     MatIconModule,
+    MatListModule,
     MatMenuModule,
     MatSelectModule,
     MatSidenavModule,
     MatToolbarModule,
-    TranslateModule.forRoot(),
-
-    PipThemesModule.forRoot(),
+    PipThemesModule.forRoot({
+      themes: [...pipWebUI2ThemesList, mstThemes['Elegant']],
+    }),
     PipAppbarModule.forRoot(),
-    PipMainLayoutAltModule,
     PipMediaModule.forRoot(),
     PipShadowModule,
-    PipSidenavExpanderModule,
-    PipSidenavModule.forRoot(),
-    PipRightnavModule.forRoot(),
+    PipNavExpanderModule,
+    PipSidenavModule.withConfig({
+      start: {
+        views: [
+          {
+            name: 'tablet',
+            alias: 'lt-md',
+            position: PipSidenavPosition.Root,
+            mode: 'side',
+            collapsed: true,
+            opened: true,
+            active: false,
+          },
+          {
+            name: 'mobile',
+            alias: 'lt-sm',
+            position: PipSidenavPosition.Root,
+            mode: 'over',
+          },
+        ],
+      },
+      end: {
+        views: [
+          {
+            name: 'default',
+            position: PipSidenavPosition.Root,
+            mode: 'side',
+            width: 350,
+          },
+          {
+            name: 'mobile',
+            alias: 'lt-sm',
+            position: PipSidenavPosition.Root,
+            mode: 'over',
+          },
+        ],
+      },
+    }),
     PipRootLayoutModule,
-
     AppRoutingModule,
-    CardLayoutExampleModule,
-    DocumentLayoutExampleModule,
-    ExamplesListModule,
-    FxLayoutExampleModule,
-    MainMenuLayoutExampleModule,
-    MainLayoutExampleModule,
-    ScrollableLayoutExampleModule,
-    TilesLayoutExampleModule
+    TranslocoRootModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}

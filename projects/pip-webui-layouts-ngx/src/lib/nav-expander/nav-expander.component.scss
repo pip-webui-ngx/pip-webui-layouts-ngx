@@ -1,0 +1,26 @@
+:host {
+  .pip-nav-expander {
+    transition: height 0.35s ease;
+    height: 0px;
+    padding-top: 0;
+
+    .mat-icon {
+      margin-right: 24px;
+      margin-left: 4px;
+      transition: opacity 0.35s ease;
+      opacity: 0;
+    }
+
+    &.show {
+      height: 48px;
+
+      .mat-icon {
+        opacity: 0.56;
+      }
+    }
+  }
+
+  ::ng-deep .mat-list-item-content {
+    height: 48px !important;
+  }
+}

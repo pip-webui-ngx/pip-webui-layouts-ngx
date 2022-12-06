@@ -1,0 +1,11 @@
+@use 'node_modules/@angular/material' as mat;
+@use 'lib/document-layout/document-layout-theme';
+@use 'lib/tiles-layout/tiles-layout.component-theme';
+
+@mixin theme($theme-or-color-config) {
+  $theme: mat.private-legacy-get-theme($theme-or-color-config);
+  @include mat.private-check-duplicate-theme-styles($theme, 'pip-webui-layouts') {
+    @include document-layout-theme.theme($theme-or-color-config);
+    @include tiles-layout.theme($theme-or-color-config);
+  }
+}

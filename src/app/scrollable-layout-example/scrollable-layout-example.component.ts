@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-scrollable-layout-example',
   templateUrl: './scrollable-layout-example.component.html',
-  styleUrls: ['./scrollable-layout-example.component.scss']
+  styleUrls: ['./scrollable-layout-example.component.scss'],
 })
 export class ScrollableLayoutExampleComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

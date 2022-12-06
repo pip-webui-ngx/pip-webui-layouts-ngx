@@ -1,0 +1,15 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/pip-webui-layouts-ngx",
+  "lib": {
+    "entryFile": "src/public_api.ts"
+  },
+  "assets": [
+    {
+      "input": "src",
+      "glob": "**/*-theme.scss",
+      "output": ""
+    }
+  ],
+  "allowedNonPeerDependencies": ["css-element-queries", "masonry-layout"]
+}

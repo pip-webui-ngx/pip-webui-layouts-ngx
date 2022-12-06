@@ -1,0 +1,41 @@
+.pip-root-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .pip-sidenav {
+    transition: width 0.3s ease;
+  }
+
+  ::ng-deep {
+    pip-sidenav-start,
+    pip-sidenav-end {
+      height: 100%;
+    }
+  }
+
+  .pip-root-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+
+    .pip-root-header {
+      flex: 0 0 auto;
+    }
+
+    .pip-main-container {
+      flex: 1;
+
+      .pip-main-content {
+        box-sizing: border-box;
+        overflow-x: hidden;
+      }
+    }
+
+    .pip-root-footer {
+      flex: 0 0 auto;
+    }
+  }
+}

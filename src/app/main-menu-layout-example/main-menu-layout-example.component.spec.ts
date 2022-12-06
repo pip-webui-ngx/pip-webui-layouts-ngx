@@ -13,19 +13,18 @@
 //   MatSidenavModule,
 //   MatToolbarModule,
 // } from '@angular/material';
-// import { TranslateModule } from '@ngx-translate/core';
 // import {
 //   PipMediaService, PipSidenavService, PipRightnavService,
 //   PipDocumentLayoutModule, PipTilesLayoutModule, PipMediaModule, PipMenuLayoutModule, PipShadowModule
-// } from 'pip-webui2-layouts';
+// } from 'pip-webui-layouts-ngx';
 
 // import { MainMenuLayoutExampleComponent } from './main-menu-layout-example.component';
 // import { AppComponent } from '../app.component';
+// import { TranslocoTestingModule } from '@ngneat/transloco';
 
 describe('MainMenuLayoutExampleComponent', () => {
   // let component: MainMenuLayoutExampleComponent;
   // let fixture: ComponentFixture<MainMenuLayoutExampleComponent>;
-
   // beforeEach(async(() => {
   //   TestBed.configureTestingModule({
   //     declarations: [AppComponent, MainMenuLayoutExampleComponent],
@@ -41,7 +40,7 @@ describe('MainMenuLayoutExampleComponent', () => {
   //       MatSelectModule,
   //       MatSidenavModule,
   //       MatToolbarModule,
-  //       TranslateModule.forRoot(),
+  //       TranslocoTestingModule,
   //       PipDocumentLayoutModule, PipTilesLayoutModule, PipMediaModule, PipMenuLayoutModule, PipShadowModule
   //     ],
   //     providers: [
@@ -53,13 +52,11 @@ describe('MainMenuLayoutExampleComponent', () => {
   //   })
   //     .compileComponents();
   // }));
-
   // beforeEach(() => {
   //   fixture = TestBed.createComponent(MainMenuLayoutExampleComponent);
   //   component = fixture.componentInstance;
   //   fixture.detectChanges();
   // });
-
   // it('should create', () => {
   //   expect(component).toBeTruthy();
   // });
