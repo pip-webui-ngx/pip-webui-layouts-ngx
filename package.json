@@ -1,6 +1,6 @@
 {
   "name": "pip-webui-layouts-ngx",
-  "version": "14.0.1",
+  "version": "14.0.2",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -42,7 +42,6 @@
     "@angular/router": "^14.2.10",
     "@ngneat/transloco": "^4.1.1",
     "core-js": "^2.6.2",
-    "lodash": "4.17.11",
     "lodash-es": "^4.17.21",
     "masonry-layout": "^4.2.2",
     "rxjs": "~7.5.6",
