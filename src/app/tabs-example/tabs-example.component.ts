@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TranslocoService } from '@ngneat/transloco';
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash-es/cloneDeep';
 import { PipAppbarService, PipAppbarTab } from 'pip-webui-layouts-ngx';
 
 @Component({

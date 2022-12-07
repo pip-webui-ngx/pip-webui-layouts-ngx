@@ -11,5 +11,5 @@
       "output": ""
     }
   ],
-  "allowedNonPeerDependencies": ["css-element-queries", "masonry-layout"]
+  "allowedNonPeerDependencies": ["css-element-queries", "lodash-es", "masonry-layout"]
 }

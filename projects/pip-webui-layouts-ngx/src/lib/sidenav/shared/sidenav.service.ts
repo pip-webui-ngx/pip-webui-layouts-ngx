@@ -1,7 +1,8 @@
 import { PipSidenavSide } from './models/PipSidenavSide';
 import { Injectable, Inject, Optional } from '@angular/core';
 import { MediaObserver, MediaChange } from '@angular/flex-layout';
-import { cloneDeep, defaultsDeep } from 'lodash';
+import defaultsDeep from 'lodash-es/defaultsDeep';
+import cloneDeep from 'lodash-es/cloneDeep';
 import { Observable, BehaviorSubject, of, combineLatest } from 'rxjs';
 import { switchMap, map, shareReplay, distinctUntilChanged, tap } from 'rxjs/operators';
 
